@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Главная страница(hello)</title>
+</head>
+<body>
+    <h1>Это шаблон Индексов</h1>
+    <h2>{% for item in items %}
+        <a href="{% url 'myapp:detail' item.id %}">
+        <p>{{item.id}}:{{item.name}}</p>
+        <p>{{item.description}}</p>
+        <p>{{item.price}}</p>
+
+        <a>
+        {% endfor %}
+    </h2>
+</body>
+</html>
